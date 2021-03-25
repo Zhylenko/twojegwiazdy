@@ -21,7 +21,7 @@
                         <div class="work-area">
                             <div class="template-area">
                                 @foreach($presets as $preset)
-                                <div class="template active" data-id="{{ $preset->id }}" data-space-width="{{ $preset->space_width }}" data-space-height="{{ $preset->space_height }}" data-space-radius="{{ $preset->space_radius }}" data-space-top="{{ $preset->space_top }}" data-space-negative="{{ $preset->space_negative }}" data-title-top="{{ $preset->title_top }}" data-description-top="{{ $preset->description_top }}" data-compass="{{ $preset->compass }}" data-frame="{{ $preset->frame }}" data-text-color="{{ $preset->text_color }}" data-background-color="{{ $preset->background_color }}">
+                                <div class="template {{ ($loop->index == 0) ? 'active' : ''}}" data-id="{{ $preset->id }}" data-space-width="{{ $preset->space_width }}" data-space-height="{{ $preset->space_height }}" data-space-radius="{{ $preset->space_radius }}" data-space-top="{{ $preset->space_top }}" data-space-negative="{{ $preset->space_negative }}" data-title-top="{{ $preset->title_top }}" data-description-top="{{ $preset->description_top }}" data-compass="{{ $preset->compass }}" data-frame="{{ $preset->frame }}" data-text-color="{{ $preset->text_color }}" data-background-color="{{ $preset->background_color }}">
                                     <img src="{{ asset('img/templates/presets/preset_' . $preset->id . '.png') }}" alt="template image">
                                 </div>
                                 @endforeach           
@@ -92,15 +92,15 @@
                                 </form>
                                 <div class="example-area">
                                     <div class="example-block">
-                                        @foreach($examples as $title => $example)
+                                        @foreach($examples as $example)
                                         <div class="example">
                                             <div class="title">
-                                                <p>{{ $title }}</p>
+                                                <p>{{ $example->name }}</p>
                                             </div>
                                             <div class="text-area">
-                                                @foreach($example as $text)
+                                                @foreach($example->examples as $text)
                                                 <div class="text">
-                                                    <p>{{ $text }}</p>
+                                                    <p>{{ $text->text }}</p>
                                                 </div>
                                                 @endforeach
                                             </div>
@@ -188,7 +188,7 @@
                             </div>
                             <div class="price-block">
                                 <div class="price">
-                                    <p>Łączny koszt: <b>490zł</b></p>
+                                    <p>Łączny koszt: <b></b></p>
                                 </div>
                                 <div id="order" class="purple-button">
                                     <p>Przejdź do zapłaty</p>

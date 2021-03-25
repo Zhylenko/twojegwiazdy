@@ -1,7 +1,10 @@
-@include('faq.faq')
+@include('layouts.progress', ['progress' => $progress])
+@include('constructor.steps.success')
 
 @section('content')
-@yield('faq', $faqs)
+@yield('progress')
+
+@yield('success')
 @endsection
 
 @section('scripts')

@@ -16,7 +16,7 @@ class CreateExamplesTable extends Migration
         Schema::create('examples', function (Blueprint $table) {
             $table->increments('id');
             $table->string('text', 255);
-            $table->integer('example_titles_id');
+            $table->integer('example_title_id');
             $table->timestamp('created_at')->useCurrent();
         });
     }

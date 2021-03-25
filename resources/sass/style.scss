@@ -194,6 +194,14 @@ form{
 
 input{
 	outline: none;
+
+	&[type="submit"]{
+		border: none;
+
+		&:disabled{
+			opacity: .8;
+		}
+	}
 }
 
 label{
@@ -304,6 +312,10 @@ form{
 
 			&:focus ~ .bar {
 				background-size: 100% 2px;
+			}
+
+			&:invalid ~ .bar {
+				background-image: linear-gradient($color32, $color32);
 			}
 		}
 

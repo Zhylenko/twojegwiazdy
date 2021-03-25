@@ -1,5 +1,5 @@
 @include('layouts.progress', ['progress' => $progress])
-@include('constructor.constructor', ['presets' => $presets])
+@include('constructor.steps.constructor', ['presets' => $presets, 'sizes' => $sizes, 'accessories' => $accessories, 'examples' => $examples])
 
 @section('content')
 @yield('progress')
@@ -16,18 +16,18 @@
 
 @section('scripts')
 <!-- JQuery -->
-<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="{{ asset('js/jquery.min.js') }}" type="text/javascript"></script>
 <!-- JQuery Suggestions -->
-<script src="js/jquery.suggestions.min.js" type="text/javascript"></script>
+<script src="{{ asset('js/jquery.suggestions.min.js') }}" type="text/javascript"></script>
 <!-- Virtual Sky -->
-<script src="js/stuquery.min.js" type="text/javascript"></script>
-<script src="js/virtualsky.js" type="text/javascript"></script>
+<script src="{{ asset('js/stuquery.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/virtualsky.js') }}" type="text/javascript"></script>
 <!-- Datepicker -->
-<script src="js/datepicker.min.js" type="text/javascript"></script>
+<script src="{{ asset('js/datepicker.min.js') }}" type="text/javascript"></script>
 <!-- Main -->
-<script src="js/main.js" type="text/javascript" type="text/javascript"></script>
+<script src="{{ asset('js/main.js') }}" type="text/javascript"></script>
 <!-- Constructor -->
-<script src="js/constructor.js" type="text/javascript" type="text/javascript"></script>
+<script src="{{ asset('js/constructor.js') }}" type="text/javascript"></script>
 @endsection
 
 @extends('layouts/app')

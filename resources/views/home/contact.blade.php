@@ -16,26 +16,26 @@
 						</div>
 					</div>
 					<div class="form-block">
-						<form action="#" method="post">
+						<form action="{{ route('contact-send') }}" method="post" id="contact-form">
+							@csrf
 							<div class="input">
-								<input id="name" type="text" required autocomplete="off">
+								<input id="name" name="name" type="text" required autocomplete="off">
 								<label for="name">Imię i nazwisko</label>
 								<span class="bar"></span>
+								<span class="error"></span>
 							</div>
 							<div class="input">
-								<input id="email" type="text" required autocomplete="off">
+								<input id="email" name="email" type="text" required autocomplete="off">
 								<label for="email">Email</label>
 								<span class="bar"></span>
 							</div>
 							<div class="input">
-								<textarea id="message" type="text" required autocomplete="off" rows="1"></textarea>
+								<textarea id="message" name="message" type="text" required autocomplete="off" rows="1"></textarea>
 								<label for="message">Treść wiadomości</label>
 								<span class="bar"></span>
 							</div>
 						</form>
-						<div class="blue-button">
-							<a href="#">Wyślіj wіadomość</a>
-						</div>
+						<input type="submit" class="blue-button" form="contact-form" value="Wyślіj wіadomość">
 					</div>	
 				</div>
 				<div class="info-area">

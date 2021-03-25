@@ -95,7 +95,7 @@ window.addEventListener("load", function () {
         cardinalpoints: false,
         gridlines_eq: false,
         ecliptic: false,
-        constellationwidth: 0.5,
+        constellationwidth: 0.7,
     };
 
     //Set active preset
@@ -356,10 +356,10 @@ window.addEventListener("load", function () {
         space.style.width = "calc(" + preset.getAttribute("data-space-width") / presetWidth + " * 100%)";
         space.style.height = "calc(" + preset.getAttribute("data-space-height") / presetHeight + " * 100%)";
         space.style.borderRadius = preset.getAttribute("data-space-radius");
-        planetarium.negative = (preset.getAttribute("data-space-negative") == 'true');
+        planetarium.negative = (parseInt(preset.getAttribute("data-space-negative")) == 1);
 
         //Set compass styles
-        if(preset.getAttribute("data-compass") == 1){
+        if(parseInt(preset.getAttribute("data-compass")) == 1){
             document.getElementById("compass").parentElement.style.display = "flex";
 
             compass.style.width = "calc(" + preset.getAttribute("data-space-width") / presetWidth + " * 100%)";
@@ -372,7 +372,7 @@ window.addEventListener("load", function () {
         //compass.style.borderRadius = preset.getAttribute("data-space-radius");
 
         //Set frame styles
-        if(preset.getAttribute("data-frame") == 1){
+        if(parseInt(preset.getAttribute("data-frame")) == 1){
             document.getElementById("frame").parentElement.style.display = "flex";
 
             frame.style.borderColor = preset.getAttribute("data-text-color");
@@ -385,6 +385,8 @@ window.addEventListener("load", function () {
 
         //Set description styles
         description.style.top = "calc(" + preset.getAttribute("data-description-top") / presetHeight + " * 100%)";
+
+        S.virtualsky(planetarium);
     }
 
     function setActiveSize(){
@@ -418,7 +420,7 @@ window.addEventListener("load", function () {
     }
 
     function setPrice(){
-        constructor.querySelector(".navbar-area .price-block .price b").innerText = price;  
+        constructor.querySelector(".navbar-area .price-block .price b").innerText = price + " zł";  
     }
 
     function setCoords(lat, lng){

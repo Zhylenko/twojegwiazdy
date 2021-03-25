@@ -21,7 +21,7 @@
 
 @section('scripts')
 <!-- Main -->
-<script src="{{ asset('js/main.js') }}" type="text/javascript" type="text/javascript"></script>
+<script src="{{ asset('js/main.js') }}" type="text/javascript"></script>
 @endsection
 
 @extends('layouts/app')

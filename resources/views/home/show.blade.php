@@ -23,8 +23,12 @@
 @endsection
 
 @section('scripts')
+<!-- Sweet Alert -->
+<script src="{{ asset('js/sweetalert.min.js') }}" type="text/javascript"></script>
+<!-- Form -->
+<script src="{{ asset('js/form.js') }}" type="text/javascript"></script>
 <!-- Main -->
-<script src="{{ asset('js/main.js') }}" type="text/javascript" type="text/javascript"></script>
+<script src="{{ asset('js/main.js') }}" type="text/javascript"></script>
 @endsection
 
 @extends('layouts/app')

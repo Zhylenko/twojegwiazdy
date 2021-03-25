@@ -10,7 +10,7 @@
 			</div>
 			<div class="grid-area">
 				<div class="block">
-					<img class="image" src="img/" alt="instagram-photo">
+					<img class="image" src="{{ asset('') }}" alt="instagram-photo">
 					<a href="">
 						<div class="more-area">
 							<img src="img/instagram.png" alt="instagram-logo">
@@ -18,7 +18,7 @@
 					</a>
 				</div>
 				<div class="block">
-					<img class="image" src="img/" alt="instagram-photo">
+					<img class="image" src="{{ asset('') }}" alt="instagram-photo">
 					<a href="">
 						<div class="more-area">
 							<img src="img/instagram.png" alt="instagram-logo">
@@ -26,7 +26,7 @@
 					</a>
 				</div>
 				<div class="block">
-					<img class="image" src="img/" alt="instagram-photo">
+					<img class="image" src="{{ asset('') }}" alt="instagram-photo">
 					<a href="">
 						<div class="more-area">
 							<img src="img/instagram.png" alt="instagram-logo">
@@ -34,7 +34,7 @@
 					</a>
 				</div>
 				<div class="block">
-					<img class="image" src="img/" alt="instagram-photo">
+					<img class="image" src="{{ asset('') }}" alt="instagram-photo">
 					<a href="">
 						<div class="more-area">
 							<img src="img/instagram.png" alt="instagram-logo">

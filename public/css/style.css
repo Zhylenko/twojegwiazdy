@@ -168,6 +168,12 @@ form {
 input {
   outline: none;
 }
+input[type=submit] {
+  border: none;
+}
+input[type=submit]:disabled {
+  opacity: 0.8;
+}
 
 label {
   background: none;
@@ -269,6 +275,9 @@ form .input textarea:focus, form .input input:focus {
 }
 form .input textarea:focus ~ .bar, form .input input:focus ~ .bar {
   background-size: 100% 2px;
+}
+form .input textarea:invalid ~ .bar, form .input input:invalid ~ .bar {
+  background-image: linear-gradient(#EA1601, #EA1601);
 }
 form .input .bar {
   position: relative;
