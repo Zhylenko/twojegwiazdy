@@ -11,9 +11,12 @@ class ContactController extends Controller
 {
     public function check(ContactRequest $request)
     {
-        /*return view('mail.contact.show', ['name' => $request->name,
+        /*
+        //View mail
+        return view('mail.contact.show', ['name' => $request->name,
                         'email' => $request->email,
-                        'text' => $request->message,]);*/
+                        'text' => $request->message,]);
+        */
         if($this->send($request))
             $response = [
                 "status" => "success",

@@ -27,21 +27,21 @@ window.addEventListener("load", function () {
             xhr.setRequestHeader("X-CSRF-TOKEN", token);
             xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
 
-            xhr.onprogress = function(){
-                //Disable submit-button
-                submit_button.disabled = true;
-            }
-
             xhr.onload = function(){
                 //Active submit-button
                 submit_button.disabled = false;
+
+                //Clear old errors
+                form.querySelectorAll(".error").forEach(element => {
+                    element.innerText = "";
+                });
 
                 if (this.status >= 200 && this.status < 300) {
                     if(this.response != null)
                         processResponse(this.response, form);
                 } else {
                     if(this.status == 422) {
-                        //setFormErrors(this.response.errors, form);
+                        setFormErrors(this.response.errors, form);
                     }else{
                         console.error("Error HTTP: " + this.statusText);
                     }                    
@@ -49,6 +49,9 @@ window.addEventListener("load", function () {
             }
         
             xhr.send(data);
+
+            //Disable submit-button
+            submit_button.disabled = true;
         });
     }
 });
@@ -56,24 +59,25 @@ window.addEventListener("load", function () {
 function processResponse(response, form, func = function (params) {}){
     if(response.status == 'success'){
         if(response.data.send == true)
-            swal("Sukces!", "Wiadomość wysłana!", response.status);
+            swal("Sukces!", "Wiadomość wysłana!", response.status)
+            .then((value) => {
+                //Redirect
+                if(response.url != null)
+                    window.location.href = response.url;
+            });
 
         //User function
         func();
-
-        //Redirect
-        if(response.url != null)
-            setTimeout(function () {
-                window.location.href = response.url;
-            }, 2000);
     }else{
+        //Error
         if(response.data.send == false)
             swal("Błąd!", "Błąd wysyłki!", "error");
     }
 }
 
 function setFormErrors(errors, form) {
+    //Set errors
     for (let i in errors) {
-        form.querySelector("input[name=\"" + i + "\"],textarea[name=\"" + i + "\"]").setCustomValidity(errors[i][0]);
+        form.querySelector("input[name=\"" + i + "\"] ~ .error,textarea[name=\"" + i + "\"] ~ .error").innerText = errors[i];
     }
 }

@@ -28,11 +28,13 @@
 								<input id="email" name="email" type="text" required autocomplete="off">
 								<label for="email">Email</label>
 								<span class="bar"></span>
+								<span class="error"></span>
 							</div>
 							<div class="input">
 								<textarea id="message" name="message" type="text" required autocomplete="off" rows="1"></textarea>
 								<label for="message">Treść wiadomości</label>
 								<span class="bar"></span>
+								<span class="error"></span>
 							</div>
 						</form>
 						<input type="submit" class="blue-button" form="contact-form" value="Wyślіj wіadomość">

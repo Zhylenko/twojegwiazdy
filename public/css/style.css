@@ -294,6 +294,13 @@ form .input .bar {
   background-repeat: no-repeat;
   background-size: 0% 100%;
 }
+form .input .error {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  font-size: 14px;
+  color: #EA1601;
+}
 form .switch {
   position: relative;
   display: flex;
@@ -2331,6 +2338,9 @@ Responsive
   form .input .bar {
     margin-top: 2px;
   }
+  form .input .error {
+    font-size: 12px;
+  }
   form .switch {
     font-size: 16px;
   }
@@ -3012,6 +3022,9 @@ Responsive
   }
   form .input textarea:focus ~ label, form .input textarea:valid ~ label, form .input input:focus ~ label, form .input input:valid ~ label {
     top: -16px;
+    font-size: 10px;
+  }
+  form .input .error {
     font-size: 10px;
   }
 

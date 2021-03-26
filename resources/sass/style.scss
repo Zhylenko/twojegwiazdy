@@ -335,6 +335,14 @@ form{
 			background-repeat: no-repeat;
 			background-size: 0% 100%;
 		}
+
+		.error{
+			position: absolute;
+			top: 100%;
+			left: 0;
+			font-size: 14px;
+			color: $color32;
+		}
 	}
 
 	.switch{
@@ -2805,6 +2813,10 @@ Responsive
 			.bar{
 				margin-top: 2px;
 			}
+
+			.error{
+				font-size: 12px;
+			}
 		}
 
 		.switch{
@@ -3867,6 +3879,10 @@ Responsive
 					top: -16px;
 					font-size: 10px;
 				}
+			}
+
+			.error{
+				font-size: 10px;
 			}
 		}
 	}
